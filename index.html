@@ -4,52 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Tickethack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        <title>Tickethack</title>
 </head>
 <body>
     <div id="container">
     <header class="header">
         <a href=""> <h1> Tickethack </h1> </a>
-        <a href="" id="cart" class="">
-            cart
-        </a>
-        <a href="" id="booking" class="">
-            booking
-        </a>
+        <div class="menu">
+            <a href="" id="cart" class="">
+                cart
+            </a>
+            <a href="" id="booking" class="">
+                booking
+            </a>
+        </div>
     </header>
     <main  class="main">
-        <div>
-            <div class="welcome">
-                <h2> Explore the world effortlessly by train !</h2>
-                <p> Compare, book and enjoy cheap prices for train tickets.</p>
-            </div>
-            <div class="block" >
 
-                <div id="searchTrip" class="searchBox">
+    <div class="welcome">
+        <h2> Explore the world effortlessly by train !</h2>
+        <p> Compare, book and enjoy cheap prices for train tickets.</p>
+    </div>
+        <div class="mid-card">
+            <div class="card-left">
+                <div class="block" >
+
+                    <div id="searchTrip" class="searchBox">
+                        <input
+                        id="departure"
+                        type="text"
+                        placeholder="departure"
+                    />
                     <input
-                    id="departure"
-                    type="text"
-                    placeholder="departure"
-                  />
-                  <input
-                    id="arrival"
-                    type="text"
-                    placeholder="arrival"
-                  />
-                    <input type="date">
-                    <button id="searchButton" class="">
-                        Search
-                    </button>
+                        id="arrival"
+                        type="text"
+                        placeholder="arrival"
+                    />
+                        <input id="dateSearch" type="date">
+                        <button id="searchButton" class="">
+                            Search
+                        </button>
 
+                    </div>
                 </div>
-
+            </div>
+            <div class="card-right">
                 <div id="getTrip" class="getTrip">
-   
+                    <img src="./images/train.png" alt="">
                     <p> It's time to look for your next trip !</p>
                 </div>
-
             </div>
-        </div>
 
     </main>
     
