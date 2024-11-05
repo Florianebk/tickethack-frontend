@@ -1,4 +1,4 @@
-document.querySelector('#searchButton').addEventListener('click', function() {
+document.querySelector('#searchButton').addEventListener('click', function () {
 
     let departure = document.querySelector('#departure').value
     departure = departure.charAt(0).toUpperCase() + departure.slice(1)
@@ -7,58 +7,63 @@ document.querySelector('#searchButton').addEventListener('click', function() {
     let date = document.querySelector('#dateSearch').value
 
 
-    if(!departure && !arrival){
+    if (!departure && !arrival) {
 
-        document.querySelector('.card-right').innerHTML = 
-                `
+        document.querySelector('.card-right').innerHTML =
+            `
                 <div id="getTrip" class="getTrip">
                     <img src="./images/notfound.png" alt="">
                     <p> No trip found !</p>
                 </div>`
     } else {
         fetch(`http://localhost:3000/trip/list?departure=${departure}&arrival=${arrival}&date=${date}`)
-        .then(response => response.json())
-        .then(trip =>{
+            .then(response => response.json())
+            .then(trip => {
 
-            document.querySelector('.card-right').innerHTML = ''
-             
-            for(let el of trip.trips){
-                document.querySelector('.card-right').innerHTML += `<div class='line-trip'>
+                document.querySelector('.card-right').innerHTML = ''
+
+                for (let el of trip.trips) {
+                    document.querySelector('.card-right').innerHTML += `<div class='line-trip'>
                 ${el.departure} to ${el.arrival} - ${el.price}
                 <button id="addBooking" class=""> Book </button>
                 </div>  `;
-            
-            }         
 
-        })}
+                }
+
+            })
+    }
 
 })
 
 
 
-// function addBooking(){
-//     document.querySelector('#addBooking').addEventListener('click', function(){
-//         const newBasket = new Basket({
-//             departure: departure,
-//             arrival: arrival,
-//             date: date,
-//             price : price
-//         })
-    
-//          newBasket.save()
+function addBooking() {
+    for (let i = 0; i < document.querySelectorAll('#addBooking').length; i++) {
+        document.querySelectorAll('#addBooking').addEventListener('click', function () {
 
-//         })
+            const newBasket = new Basket({
+                departure: departure,
+                arrival: arrival,
+                date: date,
+                price: price
+            })
 
-//     }
-    
-            
-            // fetch('http://localhost:3000/save', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(data)
-            // }) 
-            // .then(response => response.json()) .then(data => {console.log(data);});
- 
+            newBasket.save()
+
+            window.location.href = '/booking.html'
+
+        })
+    }
+}
+
+
+// fetch('http://localhost:3000/save', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(data)
+// })
+// .then(response => response.json()) .then(data => {console.log(data);});
+
 
 
 
