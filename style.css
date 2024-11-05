@@ -71,6 +71,19 @@ body{
             width: 60%;
             height: 60%;
             justify-content: space-around;
+            transform-origin: left;
+            animation: navkey 500ms;
+        }
+        
+
+        @keyframes navkey {
+            0%{
+                transform: scaleX(0);
+            }
+
+            100%{
+                transform: scaleX(1);
+            }
         }
 
             .card-left{
