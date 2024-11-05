@@ -7,10 +7,7 @@ document.querySelector('#searchButton').addEventListener('click', function() {
     let date = document.querySelector('#dateSearch').value
 
 
-     console.log(departure)
-
-
-
+if()
 
         fetch(`http://localhost:3000/trip/list?departure=${departure}&arrival=${arrival}&date=${date}`)
         .then(response => response.json())
@@ -21,7 +18,8 @@ document.querySelector('#searchButton').addEventListener('click', function() {
             for(let el of trip.trips){
                 document.querySelector('.card-right').innerHTML += `<div class='line-trip'>
                 ${el.departure} to ${el.arrival} - ${el.price}
-                </div>`;
+                <button id="addBooking" class=""> Book </button>
+                </div>  `;
             
             }         
 
@@ -29,10 +27,31 @@ document.querySelector('#searchButton').addEventListener('click', function() {
 
 })
 
-function addBooking(){
-    
-}
 
+
+function addBooking(){
+    document.querySelector('#addBooking').addEventListener('click', function(){
+        const newBasket = new Basket({
+            departure: departure,
+            arrival: arrival,
+            date: date,
+            price : price
+        })
+    
+         newBasket.save()
+
+        })
+
+    }
+    
+            
+            // fetch('http://localhost:3000/save', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(data)
+            // }) 
+            // .then(response => response.json()) .then(data => {console.log(data);});
+ 
 
 
 
