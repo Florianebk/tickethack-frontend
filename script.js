@@ -23,11 +23,11 @@ document.querySelector('#searchButton').addEventListener('click', function () {
                 document.querySelector('.card-right').innerHTML = ''
 
                 for (let el of trip.trips) {
-                    document.querySelector('.card-right').innerHTML += `<div class='line-trip'>
+                    document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
                 ${el.departure} to ${el.arrival} - ${el.price}
                 <button id="addBooking" class=""> Book </button>
                 </div>  `;
-
+                
                 }
 
             })
@@ -37,10 +37,15 @@ document.querySelector('#searchButton').addEventListener('click', function () {
 
 
 
+
+
+
+
 function addBooking() {
     for (let i = 0; i < document.querySelectorAll('#addBooking').length; i++) {
         document.querySelectorAll('#addBooking').addEventListener('click', function () {
 
+            
             const newBasket = new Basket({
                 departure: departure,
                 arrival: arrival,
