@@ -7,8 +7,15 @@ document.querySelector('#searchButton').addEventListener('click', function() {
     let date = document.querySelector('#dateSearch').value
 
 
-if()
+    if(!departure && !arrival){
 
+        document.querySelector('.card-right').innerHTML = 
+                `
+                <div id="getTrip" class="getTrip">
+                    <img src="./images/notfound.png" alt="">
+                    <p> No trip found !</p>
+                </div>`
+    } else {
         fetch(`http://localhost:3000/trip/list?departure=${departure}&arrival=${arrival}&date=${date}`)
         .then(response => response.json())
         .then(trip =>{
@@ -23,26 +30,26 @@ if()
             
             }         
 
-        })
+        })}
 
 })
 
 
 
-function addBooking(){
-    document.querySelector('#addBooking').addEventListener('click', function(){
-        const newBasket = new Basket({
-            departure: departure,
-            arrival: arrival,
-            date: date,
-            price : price
-        })
+// function addBooking(){
+//     document.querySelector('#addBooking').addEventListener('click', function(){
+//         const newBasket = new Basket({
+//             departure: departure,
+//             arrival: arrival,
+//             date: date,
+//             price : price
+//         })
     
-         newBasket.save()
+//          newBasket.save()
 
-        })
+//         })
 
-    }
+//     }
     
             
             // fetch('http://localhost:3000/save', {
