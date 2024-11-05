@@ -131,12 +131,13 @@ body{
             }
 
             .card-right div{
-                width: 90%;
-                height: 20px;
+                width: 85%;
+                height: 30px;
                 background-color: antiquewhite;
                 display: flex;
                 justify-content: space-between;
                 border-radius: 15px;
+                margin: 5px;
             }
 
 
