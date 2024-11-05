@@ -18,22 +18,25 @@ body{
    }
 
    header{
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     display: flex;
     align-items: center;
     background-color: white;
     text-decoration: none;
+    border-radius: 30px;
    }
         header a{
             text-decoration: none;
             color: #66A691;
-            transition: all ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
         header a:hover{
-            border-bottom: 2px solid;
+            transform: scale(1.2);
+            background-color: white;
+            border-radius: 30px;
         }
         .menu{
             font-size: 30px;
@@ -46,12 +49,13 @@ body{
         }
         .menu a{
             color: black;
+            margin-right: 10px;
         }
 
    main{
     grid-column-start: 1;
     grid-column-end: 5;
-    grid-row-start: 2;
+    grid-row-start: 3;
     grid-row-end: 13;
     display: flex;
     flex-direction: column;
@@ -94,30 +98,27 @@ body{
                 justify-content: center;
                 align-items: center;
                 border-radius: 30px;
-                padding: 10px;
             }
                 .searchBox{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    width: 250px;
                 } 
 
                     #departure{
-                        margin-bottom: 5px;
                         height: 30px;
                         background-color: #d3d3d3;
                         border: none;
                         border-radius: 15px;
                     }
                     #arrival{
-                        margin-top: 0;
                         height: 30px;
                         background-color: #d3d3d3;
                         border: none;
                         border-radius: 15px;
                     }
                     #dateSearch{
-                        margin-top: 80px;
                         height: 30px;
                         background-color: #d3d3d3;
                         border: none;
@@ -147,24 +148,23 @@ body{
                 background-color: white;
                 border-radius: 30px;
                 overflow: scroll;
-                padding: 10px;
             }
 
             .line-trip{
                 width: 85%;
-                height: 40px;
                 background-color: antiquewhite;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 border-radius: 15px;
                 margin: 5px;
+                padding: 8px;
             }
 
             .line-trip button{
                 background-color: skyblue;
                 border-radius: 30px;
                 border: none;
-                height: 80%;
             }
 
 
