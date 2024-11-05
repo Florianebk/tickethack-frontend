@@ -3,13 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Tickethack</title>
 </head>
 <body>
+    <div id="container">
+    <header class="header">
+        <a href=""> <h1> Tickethack </h1> </a>
+        <a href="" id="cart" class="">
+            cart
+        </a>
+        <a href="" id="booking" class="">
+            booking
+        </a>
+    </header>
+    <main  class="main">
+        <div>
+            <div class="welcome">
+                <h2> Explore the world effortlessly by train !</h2>
+                <p> Compare, book and enjoy cheap prices for train tickets.</p>
+            </div>
+            <div class="block" >
+
+                <div id="searchTrip" class="searchBox">
+                    <input
+                    id="departure"
+                    type="text"
+                    placeholder="departure"
+                  />
+                  <input
+                    id="arrival"
+                    type="text"
+                    placeholder="arrival"
+                  />
+                    <input type="date">
+                    <button id="searchButton" class="">
+                        Search
+                    </button>
+
+                </div>
+
+                <div id="getTrip" class="getTrip">
+   
+                    <p> It's time to look for your next trip !</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
     
 
     <script src="script.js"></script>
-    
+</div>
 </body>
 </html>
