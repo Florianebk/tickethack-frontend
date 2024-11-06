@@ -57,7 +57,7 @@ document.querySelector('#searchButton').addEventListener('click', function () {
                     let minutes = newDate.getMinutes()
 
                     document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
-                ${el.departure} to ${el.arrival} ${heure}:${minutes} - ${el.price}
+                ${el.departure} to ${el.arrival} ${heure}:${minutes} - ${el.price}€
                 <p class='none'>${el._id}</p>
                 <button id="addBooking" class=""> Book </button>
                 </div>`;
