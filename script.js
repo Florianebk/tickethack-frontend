@@ -48,13 +48,14 @@ document.querySelector('#searchButton').addEventListener('click', function () {
             .then(response => response.json())
             .then(trip => {
 
-                let newDate = new Date(el.date);
-                let heure = newDate.getHours()
-                let minutes = newDate.getMinutes()
-
                 document.querySelector('.card-right').innerHTML = ''
 
                 for (let el of trip.trips) {
+
+                    let newDate = new Date(el.date);
+                    let heure = newDate.getHours()
+                    let minutes = newDate.getMinutes()
+
                     document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
                 ${el.departure} to ${el.arrival} ${heure}:${minutes} - ${el.price}
                 <p class='none'>${el._id}</p>
