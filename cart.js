@@ -29,6 +29,8 @@ function updateCount() {
                 }
                 document.querySelector('#count').textContent = newCount
                 location.reload()
+                let e = 1
+
             }
 
         )
