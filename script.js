@@ -25,7 +25,7 @@ document.querySelector('#searchButton').addEventListener('click', function () {
                 for (let el of trip.trips) {
                     document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
                 ${el.departure} to ${el.arrival} - ${el.price}
-                <p id='none'>${el._id}</p>
+                <p class='none'>${el._id}</p>
                 <button id="addBooking" class=""> Book </button>
                 </div>  `;
 
@@ -44,10 +44,10 @@ document.querySelector('#searchButton').addEventListener('click', function () {
 function addBooking(){
     document.querySelectorAll('#addBooking').forEach( button => {
         button.addEventListener('click', function() {
-            let id = document.querySelector('#none').value
+            let ids = document.querySelector('.none').textContent
     
                 const data = {
-                    id: id
+                    id: ids
                 }
                 
                 
@@ -57,12 +57,8 @@ function addBooking(){
                 body: JSON.stringify(data)
                 })
                 .then(response => response.json())
-                .then(data => {console.log(data)
-            
-            
-            })
-                
-            window.location.assign('cart.html')
+                .then(data => {console.log(data)})
+                .then(()=>window.location.assign('cart.html'))
     
                
     

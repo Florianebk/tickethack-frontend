@@ -198,6 +198,6 @@ body{
                 cursor: pointer;
             }
 
-            #none{
+            .none{
                 display: none;
             }
