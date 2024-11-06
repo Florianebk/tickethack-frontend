@@ -3,7 +3,7 @@
 fetch('http://localhost:3000/basket/cart')
 .then(response => response.json())
 .then(data => {
-    if(data.cart){
+    if(data.cart.length > 0){
 
         let count = 0 
  
@@ -16,7 +16,7 @@ fetch('http://localhost:3000/basket/cart')
         </div>
         <div class='separateur'></div>
         <div class='footer'>
-        <p>${count}€</p>
+        <p id='count'></p>
         <button id="purchase"> purchase </button>
         </div>
         </div>`
@@ -32,11 +32,12 @@ fetch('http://localhost:3000/basket/cart')
             document.querySelector('.line-cart').innerHTML += `
             <div class='ticket'>
             ${el.departure}>${el.arrival} ${heure}:${String(minutes).padStart(2, '0')} ${el.price}€
-            <button id="delete"> delete </button>
+            <button id="delete" data-id='${el.id}'> delete </button>
             </div> `
+            document.querySelector('#count').innerHTML = `${count}€`
 
-            //deleteButton()
-            //purchaseButton()
+            deleteButton()
+            purchaseButton()
 
         }
 
@@ -44,38 +45,44 @@ fetch('http://localhost:3000/basket/cart')
     }
 })
 
-// function deleteButton(){
-//     document.querySelectorAll('#delete').forEach( button => {
-//         button.addEventListener('click', function() {
+function deleteButton(){
+    document.querySelectorAll('#delete').forEach( button => {
+        button.addEventListener('click', function() {
+
+            const getId = this.getAttribute('data-id')
                 
                 
-//                 fetch('http://localhost:3000/basket/delete',{
-//                 method:'DELETE',
-//                 })
-//                 .then(response => response.json())
-//                 .then(data => {
-//                     if(data.result){
-//                         this.parentNode.remove()
-//                     }      
-//                 }) 
-//         })          
-//     }); 
-// }
+                fetch(`http://localhost:3000/basket/delete/${getId}`,{
+                method:'DELETE',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.result){
+                        this.parentNode.remove()
+                    }      
+                }) 
+        })          
+    }); 
+}
 
-// function purchaseButton(){
-//     document.querySelectorAll('#purchase').forEach( button => {
-//         button.addEventListener('click', function() {
-//             fetch('http://localhost:3000/basket/update')
-//             .then((response => response.json()))
-//             .then(data => {
-//                 if(data.result){
+function purchaseButton(){
+    document.querySelectorAll('#purchase').forEach( button => {
+        button.addEventListener('click', function() {
+            fetch('http://localhost:3000/basket/update')
+            .then((response => response.json()))
+            .then(data => {
+                if(data.result){
 
-//                      window.location.assign('booking.html')
+                     window.location.assign('booking.html')
 
-//                 }      
-//             }) 
+                }      
+            }) 
 
-//         })
-//     })
+        })
+    })
 
-// }
+}
+
+function updateCount(){
+
+}
