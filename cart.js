@@ -29,6 +29,7 @@ function updateCount() {
 
                 }
                 document.querySelector('#count').textContent = newCount
+                location.reload()
             }
 
         })
@@ -87,7 +88,9 @@ fetch('https://ticket-hack.vercel.app/basket/cart')
 
                 document.querySelector('.line-cart').innerHTML += `
             <div class='ticket'>
-            ${el.departure}>${el.arrival} ${heure}:${String(minutes).padStart(2, '0')} ${el.price}€
+            <p>${el.departure}>${el.arrival}</p>
+            <p>${heure}h${String(minutes).padStart(2, '0')}</p>
+            <p>${el.price}€</p>
             <button class="delete" data-id='${el._id}'> delete </button>
             </div> `
                 document.querySelector('#count').innerHTML = `${count}€`
