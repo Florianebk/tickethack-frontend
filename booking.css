@@ -1,6 +1,7 @@
 .welcome{
     background-color: whitesmoke;
     border-radius: 20px;
+    max-height: 80%;
     width: 50%;
     justify-content: center;
     color: black;
@@ -19,10 +20,12 @@
 
 .line-cart{
     width: 90%;
-    height: 40%;
+    max-height: 80%;
+    min-height: 70%;
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    max-height: 30%;
 }
 
 .ticket{

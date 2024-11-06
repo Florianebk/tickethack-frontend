@@ -15,6 +15,9 @@
     align-items: center;
     justify-content: center;
 }
+.content button:hover{
+    cursor: pointer;
+}
 
 .line-cart{
     width: 90%;
@@ -32,21 +35,46 @@
     border-radius: 20px;
     margin-bottom: 8px;
     padding: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.ticket:hover{
+    transform: scale(1.1)
 }
 
 .ticket button{
     border-radius: 15px;
+    border: none;
+    padding: 8px;
 }
 
 .separateur{
     width: 40%;
     height: 2px;
     background-color: black;
-    margin-top: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .footer{
-    height: 15%;
-    background-color: purple;
+    color: white;
+    height: 20%;
+    width: 100%;
+    background-color: #02002F;
     margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.footer button{
+    height: 70%;
+    border: none;
+    border-radius: 15px;
+    padding: 7px;
+}
+.footer button:hover{
+    cursor: pointer;
 }
