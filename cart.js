@@ -2,7 +2,7 @@
 function purchaseButton() {
     document.querySelectorAll('.purchase').forEach(button => {
         button.addEventListener('click', function () {
-            fetch('http://localhost:3000/basket/update')
+            fetch('https://ticket-hack.vercel.app/basket/update')
                 .then((response => response.json()))
                 .then(data => {
                     if (data.result) {
@@ -18,7 +18,7 @@ function purchaseButton() {
 }
 
 function updateCount() {
-    fetch('http://localhost:3000/basket/cart')
+    fetch('https://ticket-hack.vercel.app/basket/cart')
         .then(response => response.json())
         .then(data => {
 
@@ -41,7 +41,7 @@ function deleteButton() {
             console.log(getId)
 
 
-            fetch(`http://localhost:3000/basket/delete/${getId}`, {
+            fetch(`https://ticket-hack.vercel.app/basket/delete/${getId}`, {
                 method: 'DELETE',
             })
                 .then(response => response.json())
@@ -55,7 +55,7 @@ function deleteButton() {
     });
 }
 
-fetch('http://localhost:3000/basket/cart')
+fetch('https://ticket-hack.vercel.app/basket/cart')
     .then(response => response.json())
     .then(data => {
         if (data.cart.length > 0) {
