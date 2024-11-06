@@ -7,7 +7,7 @@ document.querySelector('#searchButton').addEventListener('click', function () {
     let date = document.querySelector('#dateSearch').value
 
 
-    if (!departure && !arrival) {
+    if (!departure || !arrival) {
 
         document.querySelector('.card-right').innerHTML =
             `
@@ -23,11 +23,11 @@ document.querySelector('#searchButton').addEventListener('click', function () {
                 document.querySelector('.card-right').innerHTML = ''
 
                 for (let el of trip.trips) {
-                    document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
+                document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
                 ${el.departure} to ${el.arrival} - ${el.price}
                 <p class='none'>${el._id}</p>
                 <button id="addBooking" class=""> Book </button>
-                </div>  `;
+                </div>`;
 
                  addBooking()
                 }

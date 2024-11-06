@@ -34,8 +34,8 @@ fetch('http://localhost:3000/basket/cart')
             ${el.departure}>${el.arrival} ${heure}:${String(minutes).padStart(2, '0')} ${el.price}€
             <button id="delete" data-id='${el.id}'> delete </button>
             </div> `
-            document.querySelector('#count').innerHTML = `${count}€`
-
+            document.querySelector('#count').innerHTML = `${count}€
+            `
             deleteButton()
             purchaseButton()
 

@@ -5,6 +5,7 @@
     justify-content: center;
     color: black;
     text-shadow: none;
+    min-height: 30%;
 }
 
 .content{
@@ -21,7 +22,8 @@
 
 .line-cart{
     width: 90%;
-    height: 40%;
+    min-height: 40%;
+    max-height: 90%;
     display: flex;
     flex-direction: column;
     overflow: scroll;
