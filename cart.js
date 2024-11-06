@@ -28,6 +28,7 @@ function updateCount() {
                     newCount += el.price
 
                 }
+                document.querySelector('#count').textContent = newCount
             }
 
         })
