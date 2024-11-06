@@ -23,7 +23,6 @@ function updateCount() {
         .then(data => {
 
             let newCount = 0;
-            if (data.cart.length > 0) {
                 for (let el of data.cart) {
                     newCount += el.price
 
@@ -32,7 +31,7 @@ function updateCount() {
                 location.reload()
             }
 
-        })
+        )
 }
 
 function deleteButton() {
