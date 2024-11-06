@@ -2,6 +2,51 @@
     background-color: whitesmoke;
     border-radius: 20px;
     width: 50%;
-    height: 30%;
     justify-content: center;
+    color: black;
+    text-shadow: none;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-cart{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.ticket{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    padding: 3px;
+}
+
+.ticket button{
+    border-radius: 15px;
+}
+
+.separateur{
+    width: 40%;
+    height: 2px;
+    background-color: black;
+    margin-top: 10px;
+}
+
+.footer{
+    height: 15%;
+    background-color: purple;
+    margin-top: auto;
 }
