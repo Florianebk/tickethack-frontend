@@ -25,9 +25,11 @@ document.querySelector('#searchButton').addEventListener('click', function () {
                 for (let el of trip.trips) {
                     document.querySelector('.card-right').innerHTML += `<div trips= '${el}' class='line-trip'>
                 ${el.departure} to ${el.arrival} - ${el.price}
+                <p id='none'>${el._id}</p>
                 <button id="addBooking" class=""> Book </button>
                 </div>  `;
-                
+
+                 addBooking()
                 }
 
             })
@@ -39,27 +41,69 @@ document.querySelector('#searchButton').addEventListener('click', function () {
 
 
 
-
-
-function addBooking() {
-    for (let i = 0; i < document.querySelectorAll('#addBooking').length; i++) {
-        document.querySelectorAll('#addBooking').addEventListener('click', function () {
-
+function addBooking(){
+    document.querySelectorAll('#addBooking').forEach( button => {
+        button.addEventListener('click', function() {
+            let id = document.querySelector('#none').value
+    
+                const data = {
+                    id: id
+                }
+                
+                
+                fetch('http://localhost:3000/basket/add',{
+                method:'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify(data)
+                })
+                .then(response => response.json)
+                .then(data => {console.log(data)
             
-            const newBasket = new Basket({
-                departure: departure,
-                arrival: arrival,
-                date: date,
-                price: price
+            
             })
-
-            newBasket.save()
-
-            window.location.href = '/booking.html'
-
+                
+            window.location.assign('cart.html')
+    
+               
+    
         })
-    }
+            
+    });
+    
 }
+
+
+
+
+
+// function addBooking() {
+
+   
+    
+//     for (let i = 0; i < document.querySelectorAll('#addBooking').length; i++) {
+//         document.querySelectorAll('#addBooking')[i].addEventListener('click', function () {
+
+//             let id = document.querySelector('#none').value
+
+//             const data = {
+//                 id: id
+//             }
+            
+            
+//             fetch('http://localhost:3000/basket/add',{
+//             method:'POST',
+//             headers: {'Content-Type':'application/json'},
+//             body: JSON.stringify(data)
+//             })
+//             .then(response => response.json)
+            
+            
+
+//             window.location.href = '/booking.html'
+
+//         })
+//     }
+// }
 
 
 // fetch('http://localhost:3000/save', {
