@@ -1,6 +1,6 @@
 
 function purchaseButton() {
-    document.querySelectorAll('#purchase').forEach(button => {
+    document.querySelectorAll('.purchase').forEach(button => {
         button.addEventListener('click', function () {
             fetch('http://localhost:3000/basket/update')
                 .then((response => response.json()))
@@ -72,7 +72,7 @@ fetch('http://localhost:3000/basket/cart')
         <div class='separateur'></div>
         <div class='footer'>
         <p id='count'></p>
-        <button id="purchase"> purchase </button>
+        <button class="purchase"> purchase </button>
         </div>
         </div>`
 
